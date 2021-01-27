@@ -39,9 +39,7 @@ const App: () => React$Node = () => {
 
   return (
     <SafeAreaView style={{flex:1,flexDirection:'column',alignItems:'stretch'}}>
-       <MonthScreen/ >
-    
-          
+      <View/>
     </SafeAreaView>
   );
 };

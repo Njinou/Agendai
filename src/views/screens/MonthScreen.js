@@ -17,8 +17,6 @@ const Semaine = () =>{
     return   jours.map ( (val,key)=> <Band key={val} text={val} color="blue"/>);
 }
 
-//
-//<JourScreen data={time.military}/>
 const Schedule = () =>{
   return jours.map ( (val,key)=>  {
     return (
@@ -27,7 +25,6 @@ const Schedule = () =>{
       </Band>);
  });
 }
- 
 const MonthScreen: () => React$Node = () => {
 
   return (
