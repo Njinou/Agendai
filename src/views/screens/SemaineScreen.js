@@ -12,6 +12,7 @@ import {
   View,
   Text,
   StatusBar,
+  SafeAreaView
 } from 'react-native';
 
 
@@ -35,7 +36,7 @@ const SemaineScreen: () => React$Node = () => {
   }, [])
 
   return (
-    <>
+    <SafeAreaView>
       <StatusBar barStyle="dark-content" />
 
   <Text style={{textAlign:'center'}}>{new Date().getHours()}  + {tempsdelaJournee} </Text>
@@ -45,7 +46,7 @@ const SemaineScreen: () => React$Node = () => {
       <View style={{flex:24,flexDirection:'row',}}>
         <Schedule/>
       </View>
-    </>
+    </ SafeAreaView>
   );
 };
 

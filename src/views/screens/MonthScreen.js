@@ -10,28 +10,21 @@ import {SafeAreaView,View} from 'react-native';
 import time from '../../text/time';
 import JourScreen from './JourScreen';
 import Band from '../components/Band';
+import DraggableJourneeScreen from './DraggableJourneeScreen';
 
 const jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
 const Semaine = () =>{
     return   jours.map ( (val,key)=> <Band key={val} text={val} color="blue"/>);
 }
 
-//
-//<JourScreen data={time.military}/>
 const Schedule = () =>{
   return jours.map ( (val,key)=>  {
     return (
       <Band key={key}>
-           <JourScreen data={time.military}/>
+           <DraggableJourneeScreen data={time.military}/>
       </Band>);
  });
 }
- 
-
-
-
-
-
 const MonthScreen: () => React$Node = () => {
 
   return (
