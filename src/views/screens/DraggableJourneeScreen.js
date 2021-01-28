@@ -4,12 +4,12 @@ import DraggableFlatList, {
   RenderItemParams,
 } from 'react-native-draggable-flatlist';
 
-import time from '../../text/time';
+import constants from '../../text/constants';
 import {getColor} from '../../helpers/helpers';
 
-const NUM_ITEMS = time.military.length-1;
+const NUM_ITEMS = constants.time.military.length-1;
 
-const exampleData: Item[] = time.military.map((d, index) => {
+const exampleData: Item[] = constants.time.military.map((d, index) => {
   const backgroundColor = getColor(index,NUM_ITEMS);
   return {
     key: `item-${backgroundColor}`,
