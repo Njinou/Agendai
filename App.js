@@ -21,7 +21,7 @@ import DateTemps from './src/views/screens/DateTemps';
     <ModalComposantScreen/>
     </View>
 */
-const App = (props) => {
+const App: () => React$Node = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={{flex:1}}>
