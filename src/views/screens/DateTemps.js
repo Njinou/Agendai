@@ -11,8 +11,9 @@ import React, {useState} from 'react';
 import {View, Button, Platform,StatusBar,SafeAreaView,Text} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-import Band from './src/views/components/Band';
+import Band from '../components/Band';
 const jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
+var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const Semaine = () =>{
     return   jours.map ( (val,key)=> <Band key={val} text={val} color="blue"/>);
 }
@@ -29,8 +30,8 @@ const Schedule = () =>{
 const DateTemps: () => React$Node = () => {
 
   const [date, setDate] = useState(new Date());
-  const [mode, setMode] = useState('date');
-  const [show, setShow] = useState(false);
+  const [mode, setMode] = useState('datetime');
+  const [show, setShow] = useState(true);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -52,21 +53,13 @@ const DateTemps: () => React$Node = () => {
     showMode('time');
   };
 
-  console.log(date);
   return (
-    <SafeAreaView>
-        <Text>{date.toLocaleString()}</Text>
-      <View>
-        <Button onPress={showDatepicker} title="Show date picker!" />
-      </View>
-      <View>
-        <Button onPress={showTimepicker} title="Show time picker!" />
-      </View>
+    <SafeAreaView style={{width:225}}>
       {show && (
         <DateTimePicker
           testID="dateTimePicker"
           value={date}
-          mode={mode}
+          mode={'datetime'}
           is24Hour={true}
           display="default"
           onChange={onChange}

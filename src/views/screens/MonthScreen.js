@@ -7,7 +7,7 @@
  */
 import React from 'react';
 import {SafeAreaView,View} from 'react-native';
-import time from '../../text/time';
+import constants from '../../text/constants';
 import JourScreen from './JourScreen';
 import Band from '../components/Band';
 import DraggableJourneeScreen from './DraggableJourneeScreen';
@@ -21,7 +21,7 @@ const Schedule = () =>{
   return jours.map ( (val,key)=>  {
     return (
       <Band key={key}>
-           <DraggableJourneeScreen data={time.military}/>
+           <DraggableJourneeScreen data={constants.time.military}/>
       </Band>);
  });
 }
