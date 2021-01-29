@@ -7,7 +7,7 @@
  */
 
 
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {View, Button, Platform,StatusBar,SafeAreaView,Text} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -27,18 +27,25 @@ const Schedule = () =>{
 
 
 
-const DateTemps: () => React$Node = () => {
+const DateTemps: () => React$Node = (props) => {
 
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('datetime');
   const [show, setShow] = useState(true);
 
+  useEffect(() => {
+    props.func(date);
+  }, [])
+
+
+
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
+    props.func(currentDate);
     setDate(currentDate);
+    
   };
-
 
   const showMode = (currentMode) => {
     setShow(true);
