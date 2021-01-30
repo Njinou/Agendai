@@ -10,11 +10,13 @@ import {
   Image,
   ImagePropTypes,
   TextInput,
-  Switch,Picker,
+  Switch,
   Button
 
 } from "react-native";
 import  DateTemps from './DateTemps';
+import {Picker} from '@react-native-picker/picker';
+import AgTextInput from '../components/AgTextInput';
 //
 
 const ChildComp = (props) => (
@@ -22,7 +24,7 @@ const ChildComp = (props) => (
 )
 
 const ModalComposantScreen = (props) => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(true);
   const [isEnabled, setIsEnabled] = useState(false);
   const [repeat, setRepeat] = useState('');
   const [category,setCategory] = useState('Meeting');
@@ -108,27 +110,27 @@ const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric
               </View>:null}
             </View>
 
-            <View style={{flexDirection:'row',alignItems:'center',marginTop:20,marginBottom:20,}}>
+            <View style={{flexDirection:'row',alignItems:'center',marginTop:10,marginBottom:10,}}>
               <Text style={{fontWeight:'bold',flexWrap:'wrap',flex:1}}>
                  Title :
               </Text>
 
               <View style={styles.switch}>
-              <TextInput placeholder="Enter Title"  style={{fontSize:22}} multiline={true}/>
+                <AgTextInput style={{fontSize:22}} placeholder="Enter Title" multiline={true}/>
               </View>
             </View>
 
-            <View style={{flexDirection:'row',alignItems:'center',marginTop:20,marginBottom:20,}}>
+            <View style={{flexDirection:'row',alignItems:'center',marginTop:10,marginBottom:10,}}>
               <Text style={{fontWeight:'bold'}}>
                  Description :
               </Text>
 
               <View style={styles.switch}>
-              <TextInput placeholder="Enter the Description of the event"  multiline={true}/>
+              <AgTextInput placeholder="Enter the Description of the event" numberOfLines={5} multiline={true}/>
               </View>
             </View>
           
-            <View style={{flexDirection:'row',alignItems:'center',marginBottom:20}}>
+            <View style={{flexDirection:'row',alignItems:'center',marginBottom:10}}>
               <Text style={{fontWeight:'bold',flex:1}}>
                  Category :
               </Text>
@@ -159,7 +161,7 @@ const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric
             
             
 
-            <View style={{flexDirection:'row',alignItems:'center',marginBottom:20}}>
+            <View style={{flexDirection:'row',alignItems:'center',marginBottom:10}}>
               <Text style={{fontWeight:'bold',flex:1}}>
                  Priority :
               </Text>
@@ -181,24 +183,24 @@ const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric
             </View>
 
 
-            <View style={{flexDirection:'row',alignItems:'center',marginTop:20,marginBottom:20,}}>
+            <View style={{flexDirection:'row',alignItems:'center',marginTop:10,marginBottom:10,}}>
               <Text style={{fontWeight:'bold',flexWrap:'wrap',flex:1}}>
                  Guests :
               </Text>
 
               <View style={styles.switch}>
-              <TextInput placeholder="Selectionnez les invites.."  style={{fontSize:22}} multiline={true}/>
+              <AgTextInput placeholder="Selectionnez les invites.."  style={{fontSize:22}} multiline={true}/>
               </View>
             </View>
 
 
-            <View style={{flexDirection:'row',alignItems:'center',marginTop:20,marginBottom:20,}}>
+            <View style={{flexDirection:'row',alignItems:'center',marginTop:10,marginBottom:10,}}>
               <Text style={{fontWeight:'bold',flexWrap:'wrap',flex:1}}>
                  Upload Pictures... :
               </Text> 
 
               <View style={styles.switch}>
-                {uploadPic? <TextInput placeholder="Upload pictures will be replace with imagepicker"  style={{fontSize:22}} multiline={true}/>:<Switch
+                {uploadPic? <AgTextInput placeholder="Upload pictures will be replace with imagepicker"  style={{fontSize:22}} multiline={true}/>:<Switch
                   trackColor={{ false: "#767577", true: "#81b0ff" }}
                   thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
                   ios_backgroundColor="#3e3e3e"
@@ -226,6 +228,7 @@ const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric
         style={styles.openButton}
         onPress={() => {
           setModalVisible(true);
+          console.log("Je ne suis plus la....");
         }}
       >
        <Image source={require('../../image/plus/plusplusbleu.png')} style={{position: "absolute", bottom: 0, right: 0,width:50,height:50}}/>
