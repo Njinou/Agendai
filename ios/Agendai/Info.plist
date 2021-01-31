@@ -67,5 +67,7 @@
 	<string>$(PRODUCT_NAME) would like to access Apple Calendar.</string>
 	<key>NSSiriUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to access Siri.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to access your Microphone.</string>
 </dict>
 </plist>
