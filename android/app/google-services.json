@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "111815473464",
+    "project_id": "agendai-6633c",
+    "storage_bucket": "agendai-6633c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111815473464:android:552a40ef6a61cd9f9269cd",
+        "android_client_info": {
+          "package_name": "com.agendai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111815473464-8apnugrsc9uspp7hedq4ioagiiea44ph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe7lNzUEyohnmwjk5ba9S4ar8lHdRUKKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111815473464-8apnugrsc9uspp7hedq4ioagiiea44ph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
