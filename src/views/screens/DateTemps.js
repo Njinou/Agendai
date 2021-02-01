@@ -23,9 +23,6 @@ const Semaine = () =>{
 const Schedule = () =>{
   return jours.map ( (val,key)=> <Band key={key} color="white"/>);
 }
- 
-
-
 
 const DateTemps: () => React$Node = (props) => {
 
